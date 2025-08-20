@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lays Chips
+* source:	https://sketchfab.com/3d-models/lays-chips-83ba98d36c704cec9694ad42d177bf3b
+* author:	austeja (https://sketchfab.com/austeja)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lays Chips" (https://sketchfab.com/3d-models/lays-chips-83ba98d36c704cec9694ad42d177bf3b) by austeja (https://sketchfab.com/austeja) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

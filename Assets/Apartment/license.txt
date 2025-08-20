@@ -1,0 +1,11 @@
+Model Information:
+* title:	Room_[apartment_furniture]
+* source:	https://sketchfab.com/3d-models/room-apartment-furniture-1b5e5528de8f4b65a0eac856317c71f6
+* author:	yuuuusukeeee (https://sketchfab.com/yuuuusukeeee)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Room_[apartment_furniture]" (https://sketchfab.com/3d-models/room-apartment-furniture-1b5e5528de8f4b65a0eac856317c71f6) by yuuuusukeeee (https://sketchfab.com/yuuuusukeeee) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

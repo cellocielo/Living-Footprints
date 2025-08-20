@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../Documents/workspace"
+		},
+		{
+			"path": "../../jammatennisclinic.github.io"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"vector": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "jammatennisclinic.github.io-main 2"
+	}
+}
