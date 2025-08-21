@@ -15,10 +15,8 @@ public class PlayerPositionRestorer : MonoBehaviour
 
     IEnumerator RestorePlayerPositionDelayed()
     {
-        // Wait for end of frame to ensure all Start() methods have been called
         yield return new WaitForEndOfFrame();
         
-        // Find player if not assigned
         if (player == null)
         {
             GameObject playerObj = GameObject.Find("Player");
@@ -33,7 +31,6 @@ public class PlayerPositionRestorer : MonoBehaviour
             player.transform.position = SceneStateManager.savedPlayerPosition;
             Debug.Log($"Restored player position to {SceneStateManager.savedPlayerPosition}");
             
-            // Also handle camera position if stored
             if (SceneStateManager.hasSavedCameraPosition)
             {
                 Camera.main.transform.position = SceneStateManager.savedCameraPosition;
@@ -45,7 +42,6 @@ public class PlayerPositionRestorer : MonoBehaviour
             Debug.LogError("Player transform not found for position restoration!");
         }
 
-        // Reset flags
         SceneStateManager.hasStoredPosition = false;
         SceneStateManager.hasSavedCameraPosition = false;
     }

@@ -75,7 +75,6 @@ public class TaskCompletionPopup : MonoBehaviour
         
         if (completionText != null)
         {
-            // Store the original font size (position will be captured when popup shows)
             originalFontSize = completionText.fontSize;
             Color textColor = completionText.color;
             completionText.color = new Color(textColor.r, textColor.g, textColor.b, 0);
@@ -128,7 +127,6 @@ public class TaskCompletionPopup : MonoBehaviour
         
         if (completionText != null)
         {
-            // Capture the current position as the original position
             originalTextPosition = completionText.rectTransform.anchoredPosition;
             Debug.Log($"Captured original position: {originalTextPosition}");
             Debug.Log($"RectTransform info - Anchors: {completionText.rectTransform.anchorMin} to {completionText.rectTransform.anchorMax}");
@@ -140,24 +138,19 @@ public class TaskCompletionPopup : MonoBehaviour
             Debug.Log($"taskType.ToLower(): '{taskType.ToLower()}'");
             Debug.Log($"Comparison result: {taskType.ToLower() == "laundry_second"}");
             
-            // Adjust font size and position based on task type
             if (taskType.ToLower() == "laundry_second")
             {
                 completionText.fontSize = smallFontSize;
                 Debug.Log($"LAUNDRY_SECOND: Applying offset {smallTextYOffset}");
                 
-                // Try multiple approaches to set position
                 Vector2 newPosition = originalTextPosition;
                 newPosition.y = originalTextPosition.y + smallTextYOffset;
                 
-                // Approach 1: Direct anchoredPosition
                 completionText.rectTransform.anchoredPosition = newPosition;
                 Debug.Log($"Position set to: {completionText.rectTransform.anchoredPosition}");
                 
-                // Approach 2: Force immediate layout update
                 LayoutRebuilder.ForceRebuildLayoutImmediate(completionText.rectTransform);
                 
-                // Approach 3: Also try localPosition as backup
                 Vector3 localPos = completionText.rectTransform.localPosition;
                 localPos.y = newPosition.y;
                 completionText.rectTransform.localPosition = localPos;
@@ -187,7 +180,6 @@ public class TaskCompletionPopup : MonoBehaviour
         
         yield return StartCoroutine(FadeOutPopup());
         
-        // Reset font size and position to original after animation
         if (completionText != null)
         {
             completionText.fontSize = originalFontSize;

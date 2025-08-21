@@ -12,7 +12,7 @@ public class ClosePanel3Graphs : MonoBehaviour
     public GameObject text3;
     
     [Header("Task Completion")]
-    public string taskType; // Set this in the Inspector for each panel
+    public string taskType;
 
     void Start() {
         x.onClick.AddListener(ResumeGame);

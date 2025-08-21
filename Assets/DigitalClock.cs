@@ -39,23 +39,12 @@ public class DigitalClock : MonoBehaviour
         }
     }
     
-    // Call this method before changing scenes
     public void SaveTimeBeforeSceneChange()
     {
         PlayerPrefs.SetFloat(TIME_ELAPSED_KEY, timeElapsed);
         PlayerPrefs.Save();
     }
     
-    public void OnInteractionHappened()
-    {
-        Debug.Log("DigitalClock received interaction notification");
-        TogglePause();
-        
-        if (clockText != null)
-        {
-            clockText.gameObject.SetActive(false);
-        }
-    }
     
     public void TogglePause() 
     {

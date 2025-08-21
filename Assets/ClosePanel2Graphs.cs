@@ -10,7 +10,7 @@ public class ClosePanel2Graphs : MonoBehaviour {
     public GameObject text2;
     
     [Header("Task Completion")]
-    public string taskType; // Set this in the Inspector for each panel
+    public string taskType;
 
     void Start() {
         x.onClick.AddListener(ResumeGame);
@@ -29,7 +29,6 @@ public class ClosePanel2Graphs : MonoBehaviour {
             Debug.Log("Clock toggled on UI close");
         }
         
-        // Show task completion popup after closing the info panel
         if (!string.IsNullOrEmpty(taskType)) {
             SceneStateManager.CompleteTask(taskType);
             Debug.Log("Complete Task Method Called");

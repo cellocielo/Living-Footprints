@@ -17,7 +17,6 @@ public class moveCamera : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Only set initial position if we're NOT restoring a saved position
         if (!SceneStateManager.hasStoredPosition)
         {
             GameObject player = GameObject.Find("Player");
@@ -26,7 +25,6 @@ public class moveCamera : MonoBehaviour
                 transform.position = player.transform.position + offset;
             }
         }
-        // If we are restoring, let the PlayerPositionRestorer handle it first
     }
 
     void Update()

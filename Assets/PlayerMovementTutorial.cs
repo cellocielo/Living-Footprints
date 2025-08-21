@@ -42,7 +42,6 @@ public class PlayerMovementTutorial : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
     
-    // Footstep timing
     private float stepTimer = 0f;
     private bool wasMovingLastFrame = false;
 
@@ -126,15 +125,13 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         private void HandleFootstepAudio()
     {
-        // Check if actually moving (not just input)
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        bool isMoving = horizontalVelocity.magnitude > 0.5f; // Simple threshold
+        bool isMoving = horizontalVelocity.magnitude > 0.5f;
         
         if (grounded && isMoving)
         {
             stepTimer += Time.deltaTime;
             
-            // Fixed step timing - no speed variation
             if (stepTimer >= stepInterval)
             {
                 PlayFootstepSound();
@@ -143,7 +140,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         }
         else
         {
-            stepTimer = 0f; // Stop immediately when not moving
+            stepTimer = 0f;
         }
     }
 

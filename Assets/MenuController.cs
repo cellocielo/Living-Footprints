@@ -20,8 +20,8 @@ public class MenuController : MonoBehaviour
     public GameObject right;
 
     [Header("Star Completion Indicators")]
-    public GameObject apartmentStarObject; // Drag your apartment star GameObject here in the inspector
-    public GameObject houseStarObject; // Drag your house star GameObject here in the inspector
+    public GameObject apartmentStarObject;
+    public GameObject houseStarObject;
 
     void Start()
     {
@@ -30,7 +30,6 @@ public class MenuController : MonoBehaviour
 
     void OnEnable()
     {
-        // Update star visibility whenever the menu becomes active
         UpdateStarVisibility();
     }
 
@@ -83,11 +82,9 @@ public class MenuController : MonoBehaviour
         howToPlayButton.gameObject.SetActive(true);
         options.gameObject.SetActive(true);
 
-        // Refresh star visibility when returning to main menu
         UpdateStarVisibility();
     }
 
-    // Star functionality methods
     public void UpdateStarVisibility()
     {
         UpdateApartmentStar();
@@ -142,7 +139,6 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // Call this method whenever you return to the menu to refresh the stars
     public void RefreshMenu()
     {
         UpdateStarVisibility();

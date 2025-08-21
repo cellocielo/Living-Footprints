@@ -22,7 +22,6 @@ public class SceneStateManager : MonoBehaviour
     public static Vector3 savedPlayerPosition;
     public static bool hasStoredPosition = false;
     
-    // store camera position
     public static Vector3 savedCameraPosition;
     public static bool hasSavedCameraPosition = false;
     
@@ -30,7 +29,7 @@ public class SceneStateManager : MonoBehaviour
     
     private static HashSet<string> apartmentTasks = new HashSet<string>()
     {
-        "fridge", "laundry", "ewaste", "pill", "pan", "plants", "solarpanel, laundry_second"
+        "fridge", "laundry", "ewaste", "pill", "pan", "plants", "solarpanel", "laundry_second"
     };
     
     private static HashSet<string> houseTasks = new HashSet<string>()

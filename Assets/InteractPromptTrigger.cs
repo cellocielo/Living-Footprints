@@ -65,17 +65,14 @@ public class InteractPromptTrigger : MonoBehaviour
         }
     }
     
-    // NEW METHOD: Free cursor for UI interaction in the new scene
     private void FreeCursorForNewScene()
     {
-        // Set cursor to free and visible for the new scene (no PlayerCam to interfere)
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
         Debug.Log("Cursor freed for new scene - ready for UI interaction");
     }
 
-    // UPDATED METHOD: Mark this object as interacted based on current scene
     private void MarkObjectAsInteracted()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;

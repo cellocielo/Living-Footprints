@@ -16,7 +16,6 @@ public class PlayerCam : MonoBehaviour
         Cursor.visible = false;
     }
     
-    // Update is called once per frame
     void Update()
     {
         if (!IsAnyUIActive()) {

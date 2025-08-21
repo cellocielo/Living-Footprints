@@ -9,7 +9,7 @@ public class ClosePanel : MonoBehaviour
     public GameObject text;
 
     [Header("Task Completion")]
-    public string taskType; // Set this in the Inspector for each panel
+    public string taskType;
 
     void Start()
     {
@@ -37,11 +37,10 @@ public class ClosePanel : MonoBehaviour
             Debug.Log("Complete Task Method Called");
         }
 
-        // Check if we should complete the second laundry task
         if (TimeBasedInteraction.shouldCompleteSecondLaundryTask)
         {
             SceneStateManager.CompleteTask("laundry_second");
-            TimeBasedInteraction.shouldCompleteSecondLaundryTask = false; // Reset the flag
+            TimeBasedInteraction.shouldCompleteSecondLaundryTask = false;
             Debug.Log("Second laundry task completed on panel close!");
         }
     }
