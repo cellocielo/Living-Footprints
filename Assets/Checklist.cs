@@ -43,7 +43,6 @@ public class Checklist : MonoBehaviour
     {
         List<string> uninteractedObjects = GetUninteractedObjectsForCurrentScene();
         
-        // Use the TextMeshProUGUI component attached to contentParent (Content GameObject)
         if (checklistText != null)
         {
             if (uninteractedObjects.Count == 0)

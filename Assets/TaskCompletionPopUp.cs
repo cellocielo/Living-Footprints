@@ -54,7 +54,6 @@ public class TaskCompletionPopup : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             InitializePopup();
         }
         else if (instance != this)
@@ -138,10 +137,10 @@ public class TaskCompletionPopup : MonoBehaviour
             Debug.Log($"taskType.ToLower(): '{taskType.ToLower()}'");
             Debug.Log($"Comparison result: {taskType.ToLower() == "laundry_second"}");
             
-            if (taskType.ToLower() == "laundry_second")
+            if (taskType.ToLower() == "laundry_second" || taskType.ToLower() == "rainbarrel" || taskType.ToLower() == "jam")
             {
                 completionText.fontSize = smallFontSize;
-                Debug.Log($"LAUNDRY_SECOND: Applying offset {smallTextYOffset}");
+                Debug.Log($"Applying offset {smallTextYOffset}");
                 
                 Vector2 newPosition = originalTextPosition;
                 newPosition.y = originalTextPosition.y + smallTextYOffset;

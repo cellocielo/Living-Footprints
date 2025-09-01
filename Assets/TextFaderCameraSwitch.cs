@@ -62,7 +62,7 @@ public class TextFaderCameraSwitch : MonoBehaviour
             case "TreeScene":
             case "RainBarrelScene":
             case "CarScene":
-            case "JamScene":
+            case "Jam":
             case "NativePlantScene":
                 return "HouseScene";
                 

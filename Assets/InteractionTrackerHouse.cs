@@ -9,7 +9,7 @@ public class InteractionTrackerHouse : MonoBehaviour
     
     public Dictionary<string, string> allInteractiveObjects = new Dictionary<string, string>()
     {
-        {"Garden Plants", "Water the Plants"},
+        {"Garden Plant", "Water the Plants"},
         {"PS4", "Use the PS4"},
         {"Tree", "Check the Tree"},
         {"Rain Barrel", "Check Rain Barrel"},

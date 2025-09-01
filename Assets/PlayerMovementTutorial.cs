@@ -66,6 +66,16 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
+        // Check if movement should be disabled
+        if (!IsMovementEnabled())
+        {
+            // Stop all movement input and audio
+            horizontalInput = 0f;
+            verticalInput = 0f;
+            stepTimer = 0f;
+            return;
+        }
+
         MyInput();
         SpeedControl();
         HandleFootstepAudio();
@@ -84,7 +94,17 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        // Only move player if movement is enabled
+        if (IsMovementEnabled())
+        {
+            MovePlayer();
+        }
+    }
+
+    private bool IsMovementEnabled()
+    {
+        GameObject taskCompletionPanel = GameObject.Find("TaskCompletionPanel");
+        return taskCompletionPanel == null;
     }
 
     private void MyInput()
@@ -123,7 +143,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         }
     }
 
-        private void HandleFootstepAudio()
+    private void HandleFootstepAudio()
     {
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
         bool isMoving = horizontalVelocity.magnitude > 0.5f;

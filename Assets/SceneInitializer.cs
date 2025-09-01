@@ -9,7 +9,7 @@ public class SceneInitializer : MonoBehaviour
     public GameObject fridgeX;
     public GameObject openGreenhouse;
     public GameObject openIrrigation;
-    public GameObject openLand;
+    public GameObject openLandUse;
     public GameObject laundry;
     public Button laundryX;
     public Button dynamicPricing;
@@ -59,7 +59,7 @@ public class SceneInitializer : MonoBehaviour
             fridgeX.SetActive(true);
             openGreenhouse.gameObject.SetActive(true);
             openIrrigation.gameObject.SetActive(true);
-            openLand.gameObject.SetActive(true);
+            openLandUse.gameObject.SetActive(true);
             SceneStateManager.showFridgeUI = false;
             if (DigitalClock.Instance != null) {
                 DigitalClock.Instance.TogglePause();

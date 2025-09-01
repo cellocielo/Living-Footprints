@@ -11,7 +11,7 @@ public class InteractionTrackerApartment : MonoBehaviour
     public Dictionary<string, string> allInteractiveObjects = new Dictionary<string, string>()
     {
         {"Laundry", "Do the Laundry"},
-        {"Roof Garden", "Water the Roof Garden"},
+        {"Plants", "Water the Roof Garden"},
         {"E-Waste", "Dispose of E-Waste"},
         {"Pill", "Take Medicine"},
         {"Pan", "Use the Pan"},

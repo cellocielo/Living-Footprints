@@ -34,8 +34,7 @@ public class Open3Graph : MonoBehaviour
         button4.gameObject.SetActive(false);
     }
 
-    public void ShowPopup3()
-    {
+    public void ShowPopup3() {
         currentPanel.SetActive(false);
         popupPanel3.SetActive(true);
         button7.gameObject.SetActive(true);

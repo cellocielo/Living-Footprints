@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using System.Collections.Generic;
 
 public class SceneStateManager : MonoBehaviour
@@ -56,6 +57,14 @@ public class SceneStateManager : MonoBehaviour
         {"nativeplant", "Native Plants Task Completed!"},
     };
 
+    // Static reference to the instance for coroutine management
+    private static SceneStateManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         Debug.Log($"Game started. Completed tasks count: {completedTasks.Count}");
@@ -111,15 +120,48 @@ public class SceneStateManager : MonoBehaviour
         
         Debug.Log($"Task completed: {taskType} - {displayName}");
         
-        if (IsApartmentCompleted())
+        if (IsApartmentCompleted() && SceneManager.GetActiveScene().name == "ApartmentScene")
         {
             Debug.Log("All apartment tasks completed!");
+            if (instance != null)
+            {
+                instance.StartCoroutine(ShowCompletionPopupDelayed(true));
+            }
+            else
+            {
+                MonoBehaviour anyMonoBehaviour = GameObject.FindObjectOfType<MonoBehaviour>();
+                if (anyMonoBehaviour != null)
+                {
+                    anyMonoBehaviour.StartCoroutine(ShowCompletionPopupDelayed(true));
+                }
+            }
         }
-        
-        if (IsHouseCompleted())
+
+        if (IsHouseCompleted() && SceneManager.GetActiveScene().name == "HouseScene")
         {
             Debug.Log("All house tasks completed!");
+            if (instance != null)
+            {
+                instance.StartCoroutine(ShowCompletionPopupDelayed(false));
+            }
+            else
+            {
+                MonoBehaviour anyMonoBehaviour = GameObject.FindObjectOfType<MonoBehaviour>();
+                if (anyMonoBehaviour != null)
+                {
+                    anyMonoBehaviour.StartCoroutine(ShowCompletionPopupDelayed(false));
+                }
+            }
         }
+    }
+
+    private static IEnumerator ShowCompletionPopupDelayed(bool isApartment)
+    {
+        // Wait for the task completion popup to finish (approximately 3.5 seconds total)
+        yield return new WaitForSeconds(3.5f);
+        
+        // Show the completion exit popup
+        CompletionPopUp.ShowCompletionPopUp(isApartment);
     }
     
     public static bool IsTaskCompleted(string taskType)

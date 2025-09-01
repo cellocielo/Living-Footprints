@@ -21,7 +21,7 @@ public class EscapePopup : MonoBehaviour
 
     private void Update() 
     {
-        if (SceneManager.GetActiveScene().name != "MenuScene") 
+        if (SceneManager.GetActiveScene().name != "Menu") 
         {
             if (Input.GetKeyDown(KeyCode.Escape)) 
             {
